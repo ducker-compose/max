@@ -39,13 +39,20 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'auth',
-    'chats',
-    'contacts',
-    'messages',
-    'uploads',
-    'users'
+    'auth.apps.AuthConfig',
+    'chats.apps.ChatsConfig',
+    'contacts.apps.ContactsConfig',
+    'messages.apps.MessagesConfig',
+    'uploads.apps.UploadsConfig',
+    'users.apps.UsersConfig'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':{
+        'app.authentications.BearerToken'
+    }
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

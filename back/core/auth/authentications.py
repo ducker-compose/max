@@ -1,0 +1,3 @@
+
+class BearerToken(TokenAuthentication):
+    pass
